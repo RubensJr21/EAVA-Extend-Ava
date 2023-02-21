@@ -1,0 +1,30 @@
+/* Atividades */
+
+.checked, .not-checked{
+    margin: 1vh 0vw !important;
+    border-radius: 0.3em !important;
+}
+
+.checked {
+    background-color: lightgreen;
+}
+.label.checked {
+    background-color: lightskyblue !important;
+}
+
+.label.not-checked{
+    background-color: orange !important;
+}
+.not-checked{
+    background-color: lightpink;
+}
+
+/* Dropdown cursos */
+
+.old-course{
+    background-color: hsl(0,100%,85%);
+}
+
+.current-course{
+    background-color: hsl(90,100%,65%);
+}

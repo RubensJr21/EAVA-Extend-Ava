@@ -1,0 +1,23 @@
+{
+    "name": "EAVA (Extend AVA)",
+    "version": "1",
+    "description": "",
+    "manifest_version": 3,
+    "permissions": ["tabs"],
+    "host_permissions": [
+        "https://ava.cefor.ifes.edu.br/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://ava.cefor.ifes.edu.br/*"
+            ],
+            "js": [
+                "script.js"
+            ],
+            "css": [
+                "style.css"
+            ]
+        }
+    ]
+}
