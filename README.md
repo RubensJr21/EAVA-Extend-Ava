@@ -12,6 +12,7 @@
 > (imagem de exemplo)
 
 ---
+# EAVA-Extend-Ava
 
 > This project is an extension initially developed for Chrome, with the aim of improving some functionalities of the virtual learning environment - using moodle -, more specifically, of Instituto Federal do Espírito Santo (IFES).
 
