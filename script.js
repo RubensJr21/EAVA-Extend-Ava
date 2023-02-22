@@ -1,11 +1,26 @@
 const currentPage = window.location.href;
+const activityIsChecked = (input) => {
+    if(input.title.includes("Marcar como não concluído")) {
+        return true;
+    }
+    return false;
+}
+
+const changeStateOfActivity = (li) => {
+    li.classList.toggle("not-checked");
+    li.classList.toggle("checked");
+}
+
 if(currentPage.includes("course")){
     [...document.querySelectorAll(".content .section .activity")].forEach((li) => {
         let form = li.querySelector("span form");
         if(form != null){
             let input = form.querySelector("input:last-child");
+            input.addEventListener("click", () => {
+                changeStateOfActivity(li)
+            })
             if(input){
-                if(input.title.includes("Marcar como não concluído")) {
+                if(activityIsChecked(input)) {
                     li.classList.add("checked");
                 }else{
                     li.classList.add("not-checked");
@@ -31,8 +46,8 @@ dropCursos.forEach((li) => {
         page.innerHTML = html;
         const pathOfCourse = page.querySelector("#page-top-header").querySelector("ul").innerText
         const pertenceAoAnoAtual = pathOfCourse.includes(new Date().getFullYear())
-        const textColor = pertenceAoAnoAtual ? "hsl(90,100%,65%)" : "hsl(0,100%,75%)"
-        console.log(`%cO curso ${element_a.title}${!pertenceAoAnoAtual ? " NÃO " : ""}pertence ao ano atual`, `color:${textColor}`)
+        // const textColor = pertenceAoAnoAtual ? "hsl(90,100%,65%)" : "hsl(0,100%,75%)"
+        // console.log(`%cO curso ${element_a.title}${!pertenceAoAnoAtual ? " NÃO " : ""}pertence ao ano atual`, `color:${textColor}`)
         if(pertenceAoAnoAtual){
             li.classList.add("current-course")
         } else {
